@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ProfileImg = styled.div`
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -11,6 +11,8 @@ export const ProfileImg = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 
   img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `;
