@@ -13,7 +13,8 @@ const HeaderContainer = styled.h1`
     filter: invert(100%);
   }
 
-  h3 {
+  // validateDOMNesting(...): <h3> cannot appear as a child of <h1>.
+  span {
     padding: 1.5rem 0;
     font-size: 2.5rem;
   }
@@ -23,7 +24,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <img src={logoImg} alt="header" />
-      <h3>Meet ALL Disney Characters</h3>
+      <span>Meet ALL Disney Characters</span>
     </HeaderContainer>
   );
 }
