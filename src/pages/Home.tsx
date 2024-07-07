@@ -19,13 +19,13 @@ const CharacterItem = styled.li`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
   padding: 2rem 0;
 
   a {
     font-size: 1.8rem;
     margin: 1rem 0;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover {
