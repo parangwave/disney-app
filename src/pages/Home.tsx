@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 // common components
 import Loader from "../component/Loader";
+import { ProfileImg } from "../component/ProfileImg";
 
 const CharacterList = styled.ul`
   display: grid;
@@ -37,21 +38,6 @@ const CharacterItem = styled.li`
   }
 `;
 
-const ImgContainer = styled.div`
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-
-  img {
-    object-fit: cover;
-  }
-`;
-
 export default function Home() {
   const { isLoading, data } = useQuery<ICharacterList>({
     queryKey: ["chracterList"],
@@ -66,9 +52,9 @@ export default function Home() {
         <CharacterList>
           {data?.map((character) => (
             <CharacterItem key={character.id}>
-              <ImgContainer>
+              <ProfileImg>
                 <img src={character.imageUrl} alt="character profile img" />
-              </ImgContainer>
+              </ProfileImg>
               <Link to={`character/${character.id}`}>{character.name}</Link>
             </CharacterItem>
           ))}
