@@ -14,9 +14,20 @@ const CharacterProfile = styled.section`
   flex-direction: column;
   align-items: center;
 
-  h2 {
-    font-size: 3rem;
-    margin: 2rem;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
   }
 
   a {
@@ -68,7 +79,10 @@ export default function Character() {
       ) : (
         <CharacterProfile>
           <ProfileImg src={data?.imageUrl} />
-          <h2>{data?.name}</h2>
+          <article>
+            <h2>{data?.name}</h2>
+            <h3>starred in</h3>
+          </article>
           <Movies>
             {data?.films.map((film, idx) => (
               <li key={idx}>{film}</li>
