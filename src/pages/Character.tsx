@@ -3,6 +3,7 @@ import { fetchCharacterInfo } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { ICharacterInfo } from "./../utils/characterInfo";
 import { Link } from "react-router-dom";
+import Loader from "../component/Loader";
 import { ProfileImg } from "../component/ProfileImg";
 
 export default function Character() {
@@ -17,7 +18,7 @@ export default function Character() {
   return (
     <>
       {isLoading ? (
-        <h3>Loading</h3>
+        <Loader />
       ) : (
         <>
           <img src={`${data?.imageUrl}`} alt="character profile img" />
