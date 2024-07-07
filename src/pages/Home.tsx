@@ -59,9 +59,9 @@ export default function Home() {
       ) : (
         <CharacterList>
           {data?.map((character) => (
-            <CharacterItem key={character.id}>
-              <Link to={`character/${character.id}`}>{character.name}</Link>
+            <CharacterItem key={character?.id}>
               <ProfileImg src={character?.imageUrl} />
+              <Link to={`character/${character?.id}`}>{character?.name}</Link>
             </CharacterItem>
           ))}
         </CharacterList>
