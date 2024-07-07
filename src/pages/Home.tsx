@@ -2,6 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchCharacterList } from "../utils/api";
 import { ICharacterList } from "../utils/chatacterList";
 import { Link } from "react-router-dom";
+// common components
+import Loader from "../component/Loader";
+
 
 export default function Home() {
   const { isLoading, data } = useQuery<ICharacterList>({
@@ -12,7 +15,7 @@ export default function Home() {
   return (
     <>
       {isLoading ? (
-        <h2>Loading</h2>
+        <Loader />
       ) : (
         <ul>
           {data?.map((charater) => (
