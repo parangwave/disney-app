@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import defaultProfileImg from "../assets/default-profile.png";
+import { useState } from "react";
 
 export const ProfileImgCotainer = styled.div`
   width: 140px;
@@ -19,9 +20,19 @@ export const ProfileImgCotainer = styled.div`
 `;
 
 export default function ProfileImg({ src }: { src?: string }) {
+  const [imageSrc, setImageSrc] = useState<string | undefined>(src);
+
+  const handleImageError = () => {
+    setImageSrc(defaultProfileImg); // default when img load fails
+  };
+
   return (
     <ProfileImgCotainer>
-      <img src={src ? src : defaultProfileImg} alt="profile image" />
+      <img
+        src={imageSrc ? imageSrc : defaultProfileImg}
+        onError={handleImageError}
+        alt="profile image"
+      />
     </ProfileImgCotainer>
   );
 }
