@@ -3,10 +3,10 @@ import { fetchCharacterInfo } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { ICharacterInfo } from "./../utils/characterInfo";
 import { Link } from "react-router-dom";
-import Loader from "../component/Loader";
 import styled from "styled-components";
 
 // components
+import Loader from "../component/Loader";
 import ProfileImg from "../component/ProfileImg";
 
 const CharacterProfile = styled.section`
