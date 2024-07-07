@@ -10,8 +10,16 @@ import { ProfileImg } from "../component/ProfileImg";
 
 const CharacterList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(5, minmax(55px, 500px));
+  grid-template-columns: repeat(4, minmax(55px, 500px));
   gap: 1.8rem 0;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(6, minmax(55px, 500px));
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(3, minmax(55px, 500px));
+  }
 `;
 
 const CharacterItem = styled.li`
