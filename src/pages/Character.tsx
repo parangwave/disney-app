@@ -35,7 +35,7 @@ const Movies = styled.ul`
 
   li {
     display: inline-block;
-    background-color: #1e272e;
+    background-color: ${(props) => props.theme.accentBgColor};
     padding: 1rem;
     font-size: 1.2rem;
     align-text: center;
