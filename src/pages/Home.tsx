@@ -4,9 +4,9 @@ import { ICharacterList } from "../utils/chatacterList";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// common components
+// components
 import Loader from "../component/Loader";
-import { ProfileImg } from "../component/ProfileImg";
+import ProfileImg from "../component/ProfileImg";
 
 const CharacterList = styled.ul`
   display: grid;
@@ -60,10 +60,8 @@ export default function Home() {
         <CharacterList>
           {data?.map((character) => (
             <CharacterItem key={character.id}>
-              <ProfileImg>
-                <img src={character.imageUrl} alt="character profile img" />
-              </ProfileImg>
               <Link to={`character/${character.id}`}>{character.name}</Link>
+              <ProfileImg src={character?.imageUrl} />
             </CharacterItem>
           ))}
         </CharacterList>

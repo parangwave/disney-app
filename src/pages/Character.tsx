@@ -5,7 +5,9 @@ import { ICharacterInfo } from "./../utils/characterInfo";
 import { Link } from "react-router-dom";
 import Loader from "../component/Loader";
 import styled from "styled-components";
-import { ProfileImg } from "../component/ProfileImg";
+
+// components
+import ProfileImg from "../component/ProfileImg";
 
 const CharacterProfile = styled.section`
   display: flex;
@@ -65,9 +67,7 @@ export default function Character() {
         <Loader />
       ) : (
         <CharacterProfile>
-          <ProfileImg>
-            <img src={`${data?.imageUrl}`} alt="character profile img" />
-          </ProfileImg>
+          <ProfileImg src={data?.imageUrl} />
           <h2>{data?.name}</h2>
           <Movies>
             {data?.films.map((film, idx) => (

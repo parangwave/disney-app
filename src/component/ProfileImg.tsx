@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import defaultProfileImg from "../assets/default-profile.png";
 
-export const ProfileImg = styled.div`
+export const ProfileImgCotainer = styled.div`
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -16,3 +17,11 @@ export const ProfileImg = styled.div`
     object-fit: cover;
   }
 `;
+
+export default function ProfileImg({ src }: { src?: string }) {
+  return (
+    <ProfileImgCotainer>
+      <img src={src ? src : defaultProfileImg} alt="profile image" />
+    </ProfileImgCotainer>
+  );
+}
